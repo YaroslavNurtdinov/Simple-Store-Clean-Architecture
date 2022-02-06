@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_nav_explorer"
+        android:enabled="true"
+        android:title="@string/explorer" />
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_nav_shop"
+        android:title="@string/shop"
+        tools:ignore="DuplicateIds" />
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_nav_favorite"
+        android:title="@string/favorite"
+        tools:ignore="DuplicateIds" />
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_nav_profile"
+        android:title="@string/profile"
+        tools:ignore="DuplicateIds" />
+
+</menu>

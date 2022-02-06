@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/category"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="23dp"
+    android:background="@color/myColor"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageButton
+        android:id="@+id/select_category"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:background="@drawable/circle_background"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:focusable="true"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_select_category_phone"
+        app:tint="@color/light_grey"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/category_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginTop="7dp"
+        android:text="@string/phones"
+        android:textColor="@color/select_category_text_color"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/select_category"
+        app:layout_constraintStart_toStartOf="@id/select_category"
+        app:layout_constraintTop_toBottomOf="@id/select_category" />
+</androidx.constraintlayout.widget.ConstraintLayout>

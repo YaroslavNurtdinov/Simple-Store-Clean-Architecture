@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myColor"
+    android:defaultFocusHighlightEnabled="true"
+    android:focusable="true"
+    tools:context=".presenter.screens.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_select_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/selectCategory_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:text="@string/select_category"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view_all_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="33dp"
+            android:text="@string/view_all"
+            android:textColor="@color/orange"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/selectCategory_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/selectCategory_textView"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/select_category_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectCategory_textView"
+            tools:itemCount="1"
+            tools:listitem="@layout/row_select_category_item" />
+
+        <EditText
+            android:id="@+id/search_editText"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="82dp"
+            android:background="@drawable/custom_search_input"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="18dp"
+            android:hint="@string/search"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="24dp"
+            android:paddingEnd="4dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_category_recyclerView"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_search_imageButton"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/circle_background"
+            android:backgroundTint="@color/orange"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            android:src="@drawable/ic_search_button"
+            app:layout_constraintBottom_toBottomOf="@id/search_editText"
+            app:layout_constraintStart_toEndOf="@id/search_editText"
+            app:layout_constraintTop_toTopOf="@id/search_editText"
+            tools:ignore="TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_phones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_select_category">
+
+        <TextView
+            android:id="@+id/home_store_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/hot_sales"
+            android:textColor="@color/home_seller_text_color"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_store_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_store_textView"
+            app:layout_constraintVertical_bias="0"
+            tools:itemCount="1"
+            tools:listitem="@layout/home_store_item_layout" />
+
+        <TextView
+            android:id="@+id/best_seller_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/best_seller"
+            android:textColor="@color/home_seller_text_color"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_store_recyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/best_seller_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/best_seller_textView"
+            tools:listitem="@layout/bestseller_item_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
