@@ -13,7 +13,15 @@ class MainViewModel @Inject constructor(
     getPhonesList: GetPhonesListUseCase
 ) : ViewModel() {
 
-    val phonesList: LiveData<Resource<List<ResultItem>>> = getPhonesList.getData().asLiveData()
+    private val _phonesList: LiveData<Resource<List<ResultItem>>> =
+        getPhonesList.getData().asLiveData()
+
+    val phonesList: LiveData<Resource<List<ResultItem>>> = _phonesList
+
+
+
+
+
 
 }
 
