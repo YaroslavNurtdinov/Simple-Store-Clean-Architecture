@@ -70,6 +70,7 @@
         style="@style/MyBottomNavigationView"
         app:itemIconSize="20sp"
         android:saveEnabled="true"
+        android:visibility="gone"
         app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

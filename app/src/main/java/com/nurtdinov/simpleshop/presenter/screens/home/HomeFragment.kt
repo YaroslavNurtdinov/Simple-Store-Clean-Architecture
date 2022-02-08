@@ -23,54 +23,33 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val mainViewModel: MainViewModel by viewModels()
-
-
     private val bestSellerAdapter by lazy { BestSellerAdapter() }
     private val homeAdapter by lazy { HomeStoreAdapter() }
-
-    private var viewAllFlag:Boolean = true
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        setHasOptionsMenu(true)
         setupCategoryRecyclerView()
         setupBestSellerRecyclerView()
         setupHomeRecyclerView()
-        setHasOptionsMenu(true)
 
-        mainViewModel.phonesList.observe(requireActivity(), { data ->
+        mainViewModel.phonesList.observe(requireActivity()) { data ->
             data.data?.map { bestSellerAdapter.setData(it.bestSeller) }
             Log.d("Home", "${data.data?.map { it.bestSeller.toString() }}")
 
             data.data?.map { homeAdapter.setData(it.homeStore) }
             Log.d("Home", "${data.data?.map { it.homeStore.toString() }}")
-        })
-
-
-
-        binding.viewAllTextView.setOnClickListener {
-            if (viewAllFlag){
-                viewAllFlag = false
-                binding.viewAllTextView.text = getString(R.string.hide_all)
-                binding.selectCategoryRecyclerView.visibility = View.VISIBLE
-            }
-            else{
-                viewAllFlag = true
-                binding.viewAllTextView.text = getString(R.string.view_all)
-                binding.selectCategoryRecyclerView.visibility = View.GONE
-            }
-
         }
-
-
-        return binding.root
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.home_menu, menu)
